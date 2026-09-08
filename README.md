@@ -86,20 +86,6 @@ mailer-public/
 └── README.md                 # 本说明
 ```
 
-## 发布到 GitHub 的步骤
-
-```bash
-cd mailer-public
-git init
-git add .
-git commit -m "init"
-git branch -M main
-git remote add origin https://github.com/<你的账号>/<仓库名>.git
-git push -u origin main
-```
-
-发布前请自查（仓库内不含以下内容）：真实 `config.json`、授权码、任何个人/公司邮箱、内网 IP/域名、真实业务数据（`总结文档/` 等）——仓库根目录的 `.gitignore` 已把 `config.json`、编译产物与 `待总结文件/` 内容排除。
-
 ## 安全
 
 - 授权码属机密：只放在本地 `config.json` 或环境变量 `MAILER_PASSWORD`，不要提交、不要打印、不要发到群里；
