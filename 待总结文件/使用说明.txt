@@ -1,0 +1,19 @@
+【这个文件夹是干什么的】
+
+把你想"总结并发送邮件"的文档放到本文件夹（如 报告.docx、表格.xlsx、说明.md）。
+⚠️ 本目录内容已被 .gitignore 排除，不会随代码提交到 GitHub；如不希望公开，请把个人/公司数据放在这里或本地其它目录。
+
+【支持的文件格式】
+表格：.xlsx .csv .tsv
+文档：.docx .pptx（自动抽取文字）
+文本：.txt .md .log
+（.pdf / .doc / .xls 请先用 Word/Excel/WPS 另存为以上格式）
+
+【怎么用】
+方式一（AI 代劳，推荐）：把 skills 目录里的 skill 文件交给你的 AI，并说：
+  "请总结 待总结文件\文件名，按 daily-report-mailer.skill.md 的要求先 dry-run 预览，确认后发送。"
+方式二（手工）：
+  先预览：mailer -c config.json -f 待总结文件/文件名 --dry-run
+  发送：  mailer -c config.json -t 收件人@example.com -f 待总结文件/文件名
+  发给自己验证：mailer -c config.json -t 自己的邮箱 -f 待总结文件/文件名
+  查看脚本抽取的文本：mailer -x -f 待总结文件/文件名
