@@ -1,7 +1,7 @@
 # mailer —— 本地文件内容汇报邮件发送器
 
 读取本地文件（**表格 / Office 文档 / 纯文本**），把内容总结成一段中文正文，通过 SMTP 发送企业邮件。
-可用于手工发送，也可配合 `skills/daily-report-mailer.skill.md` 让 AI Agent 自动总结并发送。
+可用于手工发送，也可配合 `daily-report-mailer.skill.md` 让 AI Agent 自动总结并发送。
 
 - **纯 Go、零第三方依赖**：xlsx / docx / pptx 均为内置 zip+XML 解析，离线可构建。
 - **收件人自选**：默认取 `config.json → defaults.to`；每次发送可用 `-t 邮箱` 覆盖（可多个）。
@@ -53,7 +53,7 @@ mailer -x -f 待总结文件/报告.xlsx
 
 把整句话给任意能读文件/执行命令的 AI：
 
-> 按 `<本目录>/skills/daily-report-mailer.skill.md` 处理 `待总结文件/文件名`：AI 总结成一段中文正文和一句话主题 → 先 `--dry-run` 预览 → 确认后发送（收件人：默认配置里的收件人，或先用 `-t` 发给我自己验证）。
+> 按 `<本目录>/daily-report-mailer.skill.md` 处理 `待总结文件/文件名`：AI 总结成一段中文正文和一句话主题 → 先 `--dry-run` 预览 → 确认后发送（收件人：默认配置里的收件人，或先用 `-t` 发给我自己验证）。
 
 AI 会解析 skill 头部的 **JSON 元数据**（输入 Schema + 参数→argv 规则）并执行：读文件（二进制用 `-x` 转文本）→ 总结 → `-c config.json [-t 收件人] -s 主题 -b 正文` → 先 dry-run 再真发。
 
@@ -80,7 +80,7 @@ go vet ./...               # 静态检查
 mailer-public/
 ├── mailer.go / go.mod        # 源码（零第三方依赖）
 ├── config.example.json       # 配置模板（不含任何真实凭据）
-├── skills/daily-report-mailer.skill.md   # AI Skill（头部 JSON 元数据）
+├── daily-report-mailer.skill.md   # AI Skill（头部 JSON 元数据）
 ├── sample/                   # 虚构样例数据，用于 dry-run 自测
 ├── 待总结文件/                # 放你想总结/发送的文档（内容被 .gitignore 排除）
 └── README.md                 # 本说明
