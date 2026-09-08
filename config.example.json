@@ -1,0 +1,21 @@
+{
+  "_说明": "配置模板：复制为 config.json 后填写你自己的 SMTP 账号与客户端专用密码(授权码)。defaults.to 设置默认收件人(可为空，发送时用 -t <邮箱> 指定)。请勿把真实 config.json 提交到仓库。",
+  "smtp": {
+    "_说明": "示例为腾讯企业邮箱(exmail)；其它 SMTP 请相应修改 host/port/security。",
+    "host": "smtp.exmail.qq.com",
+    "port": 465,
+    "security": "ssl",
+    "username": "your-account@example.com",
+    "password": "REPLACE_WITH_CLIENT_APP_CODE",
+    "from": "your-account@example.com",
+    "fromName": "文件汇报机器人",
+    "insecureSkipVerify": false
+  },
+  "defaults": {
+    "_说明": "to 可填默认收件人(留空则每次用 -t 指定)；cc 默认空；subject 留空=自动概括文件内容，填了则作为未传 -s 时的固定主题。",
+    "to": [],
+    "cc": [],
+    "subject": ""
+  },
+  "timeoutSeconds": 20
+}

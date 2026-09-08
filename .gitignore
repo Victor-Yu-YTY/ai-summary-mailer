@@ -1,0 +1,24 @@
+# ---- 密钥与本地配置（绝不提交）----
+config.json
+config.*.json
+!config.example.json
+*.pem
+*.key
+.env
+
+# ---- 编译产物与日志 ----
+mailer.exe
+mailer
+*.exe
+*.log
+
+# ---- 待总结/上传的内容（可能含敏感数据，仅保留说明与占位）----
+待总结文件/*
+!待总结文件/使用说明.txt
+!待总结文件/.gitkeep
+
+# ---- 编辑器/系统 ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
